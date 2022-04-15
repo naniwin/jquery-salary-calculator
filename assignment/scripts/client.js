@@ -28,7 +28,7 @@ function displayEmployee() {
   el.empty();
   for (let i = 0; i < employee.length; i++) {
     el.append(
-      '<td>' +
+      '<tr> <td>' +
         employee[i].first +
         '</td> <td>' +
         employee[i].last +
@@ -40,7 +40,7 @@ function displayEmployee() {
         employee[i].salary
     ) +
       '</td>' +
-      '<td><button class="deleteEmployeeButton">Delete</button></td>';
+      '<td><button class="deleteEmployeeButton">Delete</button></td></tr>';
     //   `<td>${employee[i].first}</td> <td>${employee[i].last}</td> <td>${employee[i].id}</td> <td>${employee[i].title}</td> <td>$${employee[i].salary}</td> <td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td>`
     // );
     lineNo++;
