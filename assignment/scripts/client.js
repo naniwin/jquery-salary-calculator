@@ -4,7 +4,8 @@ let employee = [];
 
 function onReady() {
   $('#addEmployeeButton').on('click', addEmployee);
-}
+  $('#deleteEmployeeButton').on('click', deleteEmployee);
+} // end onReady
 
 function addEmployee() {
   console.log('in addEmployee');
@@ -25,6 +26,7 @@ function displayEmployee() {
   console.log('in displayEmployee');
   let el = $('.employeesOut');
   let lineNo = 1;
+  let annualSalary = 0;
   el.empty();
   for (let i = 0; i < employee.length; i++) {
     el.append(
@@ -44,7 +46,12 @@ function displayEmployee() {
     //   `<td>${employee[i].first}</td> <td>${employee[i].last}</td> <td>${employee[i].id}</td> <td>${employee[i].title}</td> <td>$${employee[i].salary}</td> <td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td>`
     // );
     lineNo++;
+    annualSalary += Number(employee[i].salary) / 12;
   }
+  // display total monthly value
+  el = $('#monthlyValueOut');
+  el.empty();
+  el.append(annualSalary.toFixed(2));
 }
 
 function emptyEmployeeInput() {
@@ -54,3 +61,7 @@ function emptyEmployeeInput() {
   $('#titleIn').val('');
   $('#annualSalaryIn').val('');
 } // end empty input value
+
+function deleteEmployee() {
+  $(this).parent().remove();
+}
