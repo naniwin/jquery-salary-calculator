@@ -4,7 +4,7 @@ let employee = [];
 
 function onReady() {
   $('#addEmployeeButton').on('click', addEmployee);
-  $('#deleteEmployeeButton').on('click', deleteEmployee);
+  $('.employeesOut').on('click', deleteEmployee);
 } // end onReady
 
 function addEmployee() {
@@ -39,12 +39,11 @@ function displayEmployee() {
         '</td> <td>' +
         employee[i].title +
         '</td> <td>' +
-        employee[i].salary
-    ) +
-      '</td>' +
-      '<td><button class="deleteEmployeeButton">Delete</button></td></tr>';
-    //   `<td>${employee[i].first}</td> <td>${employee[i].last}</td> <td>${employee[i].id}</td> <td>${employee[i].title}</td> <td>$${employee[i].salary}</td> <td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td>`
-    // );
+        employee[i].salary +
+        '</td>' +
+        '<td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td></tr>'
+      //   `<td>${employee[i].first}</td> <td>${employee[i].last}</td> <td>${employee[i].id}</td> <td>${employee[i].title}</td> <td>$${employee[i].salary}</td> <td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td>`
+    );
     lineNo++;
     annualSalary += Number(employee[i].salary) / 12;
   }
@@ -63,5 +62,7 @@ function emptyEmployeeInput() {
 } // end empty input value
 
 function deleteEmployee() {
-  $(this).parent().remove();
+  console.log($(this).data('index'));
+  employee.splice($(this).data('index'), 1);
+  displayEmployee();
 }
