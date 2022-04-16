@@ -4,7 +4,7 @@ let employee = [];
 
 function onReady() {
   $('#addEmployeeButton').on('click', addEmployee);
-  $('.employeesOut').on('click', deleteEmployee);
+  $('.employeesOut').on('click', '.deleteEmployeeButton', deleteEmployee);
 } // end onReady
 
 function addEmployee() {
@@ -51,7 +51,7 @@ function displayEmployee() {
   el = $('#monthlyValueOut');
   el.empty();
   el.append(annualSalary.toFixed(2));
-}
+} // end displayEmployee
 
 function emptyEmployeeInput() {
   $('#firstNameIn').val('');
@@ -62,7 +62,8 @@ function emptyEmployeeInput() {
 } // end empty input value
 
 function deleteEmployee() {
+  // this.closest('tr').remove();
   console.log($(this).data('index'));
   employee.splice($(this).data('index'), 1);
   displayEmployee();
-}
+} // end delete button
