@@ -20,6 +20,7 @@ function addEmployee() {
   console.log(employee);
   displayEmployee();
   emptyEmployeeInput();
+  // monthlyCost();
 } // end addEmployee
 
 function displayEmployee() {
@@ -51,6 +52,9 @@ function displayEmployee() {
   el = $('#monthlyValueOut');
   el.empty();
   el.append(annualSalary.toFixed(2));
+  if (annualSalary.toFixed(2) > 20000) {
+    $('#monthlyTotal').css('background-color', 'red');
+  }
 } // end displayEmployee
 
 function emptyEmployeeInput() {
@@ -67,3 +71,14 @@ function deleteEmployee() {
   employee.splice($(this).data('index'), 1);
   displayEmployee();
 } // end delete button
+
+// function monthlyCost() {
+//   // let totalMonthCost = annualSalary;
+
+//   // if (Number($('#monthlyValueOut').val()) > 20000) {
+//   //   $(this).addClass('red');
+//   // }
+//   if (totalMonthCost > 20000) {
+//     $('#monthlyTotal').css('background-color', 'red');
+//   }
+// }

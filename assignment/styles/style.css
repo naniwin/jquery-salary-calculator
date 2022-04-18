@@ -2,6 +2,9 @@
   padding: 10px;
   width: 100%;
 }
-th {
+.th {
   width: 15%;
+}
+.red {
+  color: red;
 }
