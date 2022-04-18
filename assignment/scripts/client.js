@@ -54,6 +54,8 @@ function displayEmployee() {
   el.append(annualSalary.toFixed(2));
   if (annualSalary.toFixed(2) > 20000) {
     $('#monthlyTotal').css('background-color', 'red');
+  } else {
+    $('#monthlyTotal').css('background-color', 'white');
   }
 } // end displayEmployee
 
@@ -73,12 +75,13 @@ function deleteEmployee() {
 } // end delete button
 
 // function monthlyCost() {
-//   // let totalMonthCost = annualSalary;
-
 //   // if (Number($('#monthlyValueOut').val()) > 20000) {
 //   //   $(this).addClass('red');
 //   // }
 //   if (totalMonthCost > 20000) {
 //     $('#monthlyTotal').css('background-color', 'red');
 //   }
+// if (Number(annualSalary) / 12 > 20000) {
+//   $('#monthlyTotal').css('background-color', 'red');
+// }
 // }

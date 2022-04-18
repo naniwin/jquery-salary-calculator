@@ -5,6 +5,18 @@
 .th {
   width: 15%;
 }
-.red {
-  color: red;
+img {
+  position: static;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  max-width: 100%;
+}
+h1 {
+  background-color: purple;
+  color: white;
+}
+body {
+  border-style: groove;
 }
