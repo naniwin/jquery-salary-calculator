@@ -20,7 +20,6 @@ function addEmployee() {
   console.log(employee);
   displayEmployee();
   emptyEmployeeInput();
-  // monthlyCost();
 } // end addEmployee
 
 function displayEmployee() {
@@ -42,7 +41,7 @@ function displayEmployee() {
         '</td> <td>' +
         employee[i].salary +
         '</td>' +
-        '<td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td></tr>'
+        `<td><button class="deleteEmployeeButton" data-id="${i}">Delete</button></td></tr>`
       //   `<td>${employee[i].first}</td> <td>${employee[i].last}</td> <td>${employee[i].id}</td> <td>${employee[i].title}</td> <td>$${employee[i].salary}</td> <td><button class="deleteEmployeeButton" data-index="${i}">Delete</button></td>`
     );
     lineNo++;
@@ -51,11 +50,11 @@ function displayEmployee() {
   // display total monthly value
   el = $('#monthlyValueOut');
   el.empty();
-  el.append(annualSalary.toFixed(2));
+  el.append('Total Monthly: $' + annualSalary.toFixed(2));
   if (annualSalary.toFixed(2) > 20000) {
-    $('#monthlyTotal').css('background-color', 'red');
+    $('#monthlyValueOut').css('background-color', 'red');
   } else {
-    $('#monthlyTotal').css('background-color', 'white');
+    $('#monthlyValueOut').css('background-color', 'white');
   }
 } // end displayEmployee
 
@@ -68,20 +67,8 @@ function emptyEmployeeInput() {
 } // end empty input value
 
 function deleteEmployee() {
+  console.log($(this).data('id'));
+  employee.splice($(this).data('id'), 1);
   // this.closest('tr').remove();
-  console.log($(this).data('index'));
-  employee.splice($(this).data('index'), 1);
   displayEmployee();
 } // end delete button
-
-// function monthlyCost() {
-//   // if (Number($('#monthlyValueOut').val()) > 20000) {
-//   //   $(this).addClass('red');
-//   // }
-//   if (totalMonthCost > 20000) {
-//     $('#monthlyTotal').css('background-color', 'red');
-//   }
-// if (Number(annualSalary) / 12 > 20000) {
-//   $('#monthlyTotal').css('background-color', 'red');
-// }
-// }
