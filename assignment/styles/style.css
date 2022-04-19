@@ -6,6 +6,9 @@
   max-width: 30px;
   width: 15%;
 }
+.tableData {
+  text-align: center;
+}
 img {
   position: static;
   display: block;
@@ -34,6 +37,8 @@ body {
   border-style: double;
   background-color: aliceblue;
   padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 .employeeHeader {
   text-indent: 40px;
@@ -43,5 +48,5 @@ body {
   padding-right: 50px;
 }
 .totalMonthlyOutput {
-  border-style: dotted;
+  border-style: double;
 }

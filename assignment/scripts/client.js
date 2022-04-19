@@ -34,11 +34,11 @@ function displayEmployee() {
         employee[i].first +
         '</td> <td>' +
         employee[i].last +
-        '</td> <td>' +
+        '</td> <td style="text-align: center">' +
         employee[i].id +
         '</td> <td>' +
         employee[i].title +
-        '</td> <td>' +
+        '</td> <td style="text-align: right">' +
         employee[i].salary +
         '</td>' +
         `<td><button class="deleteEmployeeButton" data-id="${i}">Delete</button></td></tr>`
@@ -55,7 +55,6 @@ function displayEmployee() {
     $('#monthlyValueOut').css({
       'background-color': 'red',
       'border-style': 'solid',
-      color: 'white',
       'font-family': 'Lucida Console',
     });
   } else {
