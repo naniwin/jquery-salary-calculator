@@ -18,7 +18,30 @@ h1 {
   background-color: purple;
   color: white;
   text-align: center;
+  border-style: double;
+  padding: 20px;
 }
 body {
   border-style: groove;
+}
+#inputIn {
+  border-style: double;
+  padding: 20px;
+  padding-bottom: 40px;
+  background-color: azure;
+}
+#output {
+  border-style: double;
+  background-color: aliceblue;
+  padding-left: 20px;
+}
+.employeeHeader {
+  text-indent: 40px;
+}
+#monthlyTotal {
+  text-align: right;
+  padding-right: 50px;
+}
+.totalMonthlyOutput {
+  border-style: dotted;
 }

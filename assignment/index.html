@@ -12,7 +12,7 @@
   <body>
     <h1>Salary Calculator</h1>
     <div id="inputIn">
-      <h2>Add Employee</h2>
+      <h2 class="employeeHeader">Add Employee</h2>
       <input type="text" placeholder="First Name" id="firstNameIn" />
       <input type="text" placeholder="Last Name" id="lastNameIn" />
       <input type="number" placeholder="Employee ID" id="idNumberIn" />
@@ -21,7 +21,7 @@
       <button id="addEmployeeButton">Submit</button>
     </div>
     <div id="output">
-      <h2>Employees</h2>
+      <h2 class="employeeHeader">Employees</h2>
       <table
         id="employees"
         border="2"
@@ -41,19 +41,20 @@
         </thread>
         <tbody class="employeesOut">
           <tr>
-            <td>first</td>
-            <td>last</td>
-            <td>id</td>
-            <td>title</td>
-            <td>salary</td>
+            <td style="text-align: center"><i>first</i></td>
+            <td style="text-align: center"><i>last</i></td>
+            <td style="text-align: center"><i>id</i></td>
+            <td style="text-align: center"><i>title</i></td>
+            <td style="text-align: center"><i>salary</i></td>
             <td></td>
           </tr>
         </tbody>
       </table>
-
-      <h2 id="monthlyTotal">
-        <span id="monthlyValueOut">Total Monthly: $0.00</span>
-      </h2>
+      <div class="totalMonthlyOutput">
+        <h2 id="monthlyTotal">
+          <span id="monthlyValueOut">Total Monthly: $0.00</span>
+        </h2>
+      </div>
     </div>
     <div id="imgage">
       <img src="styles/Employees.jpeg" alt="employees" />

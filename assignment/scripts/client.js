@@ -52,9 +52,14 @@ function displayEmployee() {
   el.empty();
   el.append('Total Monthly: $' + annualSalary.toFixed(2));
   if (annualSalary.toFixed(2) > 20000) {
-    $('#monthlyValueOut').css('background-color', 'red');
+    $('#monthlyValueOut').css({
+      'background-color': 'red',
+      'border-style': 'solid',
+      color: 'white',
+      'font-family': 'Lucida Console',
+    });
   } else {
-    $('#monthlyValueOut').css('background-color', 'white');
+    $('#monthlyValueOut').css('background-color', 'aliceblue');
   }
 } // end displayEmployee
 
